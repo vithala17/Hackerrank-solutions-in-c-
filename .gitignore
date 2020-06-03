@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/HackerrankSolutions/v16
+/HackerrankSolutions/bin/Debug/netcoreapp3.1
+/HackerrankSolutions/obj/Debug/netcoreapp3.1
+/HackerrankSolutions/obj
+/HackerrankSoutions.Tests/bin/Debug/netcoreapp3.1
+/HackerrankSoutions.Tests/obj/Debug/netcoreapp3.1
+/HackerrankSoutions.Tests/obj
