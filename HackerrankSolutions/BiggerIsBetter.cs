@@ -8,60 +8,55 @@ namespace HackerrankSolutions
     {
         public string biggerIsGreater(string w)
         {
-            //List<int> asciiValues = new List<int>();
-
-            //foreach (char alphabet in w)
-            //    asciiValues.Add((int)alphabet);
-
-            foreach (char alphabet in w)
+            List<int> array = new List<int>();
+            foreach (char c in w)
             {
-
+                array.Add((int)c);
             }
 
-            return null;
+            return NextPermutation(array);
         }
 
-        public class nextperm
+        public string NextPermutation(List<int> array)
         {
-            /* 
-			 1. Computes the next lexicographical permutation of the given array
-			 2. of integers in place, returning whether a next permutation existed.
-			 3. (Returns false when the argument is already the last possible permutation.)
-			 */
-            public static bool NextPermutation(int[] array)
+            // Find non-increasing suffix
+            int i = array.Count - 1;
+
+            while (i > 0 && array[i - 1] >= array[i])
+                i--;
+
+            if (i <= 0)
+                return "no answer";
+
+            // Find successor to pivot
+            int j = array.Count - 1;
+
+            while (array[j] <= array[i - 1])
+                j--;
+
+            int temp = array[i - 1];
+            array[i - 1] = array[j];
+            array[j] = temp;
+
+            // Reverse suffix
+            j = array.Count - 1;
+            while (i < j)
             {
-                // Find non-increasing suffix
-                int i = array.Length - 1;
-               
-                while (i > 0 && array[i - 1] >= array[i])
-                    i--;
-                
-                if (i <= 0)
-                    return false;
-
-                // Find successor to pivot
-                int j = array.Length - 1;
-                
-                while (array[j] <= array[i - 1])
-                    j--;
-                
-                int temp = array[i - 1];
-                array[i - 1] = array[j];
+                temp = array[i];
+                array[i] = array[j];
                 array[j] = temp;
-
-                // Reverse suffix
-                j = array.Length - 1;
-                while (i < j)
-                {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                    i++;
-                    j--;
-                }
-                return true;
+                i++;
+                j--;
             }
 
+            string s = "";
+            foreach (int element in array)
+            {
+                s += (char)element;
+            }
+
+            return s;
         }
+
     }
 }
