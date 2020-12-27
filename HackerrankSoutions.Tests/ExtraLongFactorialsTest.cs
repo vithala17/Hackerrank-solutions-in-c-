@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Text;
 using Xunit;
 
-namespace HackerrankSoutions.Tests
+namespace HackerrankSolutions.Tests
 {
     public class ExtraLongFactorialsTest
     {

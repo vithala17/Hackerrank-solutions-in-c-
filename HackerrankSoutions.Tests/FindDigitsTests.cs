@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace HackerrankSoutions.Tests
+namespace HackerrankSolutions.Tests
 {
     public class FindDigitsTests
     {

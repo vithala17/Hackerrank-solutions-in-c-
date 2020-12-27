@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace HackerrankSoutions.Tests
+namespace HackerrankSolutions.Tests
 {
     public class BetweenTwoSetsTests
     {

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerrankSolutions", "HackerrankSolutions\HackerrankSolutions.csproj", "{03C42E62-D289-4FA1-904A-FC6EABBA855B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerrankSoutions.Tests", "HackerrankSoutions.Tests\HackerrankSoutions.Tests.csproj", "{3FDE3576-A6DF-4FE9-99F4-574193BA55D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerrankSolutions.Tests", "HackerrankSoutions.Tests\HackerrankSolutions.Tests.csproj", "{3FDE3576-A6DF-4FE9-99F4-574193BA55D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HakcerrankSolution-DebugConsole", "HakcerrankSolution-DebugConsole\HakcerrankSolution-DebugConsole.csproj", "{995D45F3-8809-4D0D-A9EE-84595B81769A}"
 EndProject

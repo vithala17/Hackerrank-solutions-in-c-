@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using HackerrankSolutions;
 
-namespace HackerRankProblems.Tests
+namespace HackerrankSolutions.Tests
 {
     public class SparseArrayTests
     {

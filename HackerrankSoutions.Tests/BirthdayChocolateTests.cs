@@ -1,9 +1,10 @@
 ﻿using System;
+using HackerrankSolutions;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace HackerRankProblems.Tests
+namespace HackerrankSolutions.Tests
 {
     public class BirthdayChocolateTests
     {

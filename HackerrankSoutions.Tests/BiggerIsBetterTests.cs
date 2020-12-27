@@ -4,7 +4,7 @@ using System.Text;
 using HackerrankSolutions;
 using Xunit;
 
-namespace HackerrankSoutions.Tests
+namespace HackerrankSolutions.Tests
 {
     public class BiggerIsBetterTests
     {

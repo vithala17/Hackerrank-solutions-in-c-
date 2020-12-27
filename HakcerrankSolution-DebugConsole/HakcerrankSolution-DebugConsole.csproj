@@ -6,4 +6,8 @@
     <RootNamespace>HakcerrankSolution_DebugConsole</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HackerrankSolutions\HackerrankSolutions.csproj" />
+  </ItemGroup>
+
 </Project>
