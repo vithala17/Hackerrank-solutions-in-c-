@@ -5,6 +5,9 @@ using System.Text;
 
 namespace HackerrankSolutions
 {
+
+    // Incomplete yet to be submitted
+
     public class box
     {
         public int val;
@@ -15,34 +18,34 @@ namespace HackerrankSolutions
     {
         public int minimumDistances(int[] a)
         {
-            int diff = Int16.MaxValue ;
+            int diff = Int16.MaxValue;
             var arr = a.ToList<int>();
             List<int> mins = new List<int>();
 
             List<box> duplicatesWithIndices = (a.Select((x, i) => new box { val = x, ind = i })
                             .Where(x => (a.GroupBy(i => i).Where(g => g.Count() > 1).Select(g => g.Key).ToList()).Contains(x.val)).ToList<box>()).OrderBy(x => x.val).ToList();
 
-            //foreach (var item in duplicatesWithIndices)
-            //{
-            //    Console.WriteLine(item.val + "," + item.ind);
-            //}
-
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-
+            List<List<int>> collectiveIndices = new List<List<int>>();
             for (int i = 0; i < duplicatesWithIndices.Count; i++)
             {
-                for (int j = i + 1; j < duplicatesWithIndices.Count - 1; j++)
+                //List<int> indices = new List<int>();
+                for (int j = i; j < duplicatesWithIndices.Count; j++)
                 {
                     if (duplicatesWithIndices[i].val == duplicatesWithIndices[j].val)
                     {
-                        if (diff > duplicatesWithIndices[j].ind - duplicatesWithIndices[i].ind)
-                        {
-                            diff = duplicatesWithIndices[j].ind - duplicatesWithIndices[i].ind;
-                        }
+                        //indices.Add(duplicatesWithIndices[j].ind);
+                        //if (diff > duplicatesWithIndices[j].ind - duplicatesWithIndices[i].ind)
+                        //{
+                        //    diff = duplicatesWithIndices[j].ind - duplicatesWithIndices[i].ind;
+                        //}
                     }
                     else
+                    {
                         break;
+                    }
                 }
+                //indices.Sort();
+                //collectiveIndices.Add(indices);
             }
 
             if (diff == Int16.MaxValue)
@@ -52,18 +55,26 @@ namespace HackerrankSolutions
 
             return diff;
         }
-    
-        public int minimumDistancesUsingDictionary(int[] a)
+
+        public int minimumDistancesUsingDictionary(List<int> a)
         {
-            KeyValuePair<int, int> kp = new KeyValuePair<int, int>();
+            Dictionary<int, int> dict = new Dictionary<int, int>();
 
-            //List<kp> duplicatesWithIndices = (a.Select((x, i) => new { x, i })
-            //                .Where(x => (a.GroupBy(i => i).Where(g => g.Count() > 1).Select(g => g.Key).ToList()).Contains(x)).ToList<box>()).OrderBy(x => x).ToList();
+            List<box> duplicatesWithIndices = (a.Select((x, i) => new box { val = x, ind = i })
+                            .Where(x => (a.GroupBy(i => i).Where(g => g.Count() > 1).Select(g => g.Key).ToList()).Contains(x.val)).ToList<box>()).OrderBy(x => x.val).ToList();
 
-            Dictionary<int, int> dupeDict = new Dictionary<int, int>((a.Select((x, i) => new { x, i })
-                            .Where(x => (a.GroupBy(i => i).Where(g => g.Count() > 1).Select(g => g.Key).ToList()).Contains(x)).ToList<box>()).OrderBy(x => x));
+
+            dict = duplicatesWithIndices.Select((x, y) => new { x.val, x.ind }).ToDictionary(pair => pair.ind, pair => pair.val);
+
+            List<int> ls = null;
+            foreach (KeyValuePair<int, int> item in dict)
+            {
+                Console.WriteLine(item.Key + ", " + item.Value);
+            }
 
             return 0;
         }
     }
 }
+
+// (value, index) => new { value, index }
