@@ -15,9 +15,8 @@ namespace HakcerrankSolution_DebugConsole
     {
         static void Main(string[] args)
         {
-            Encryption enc = new Encryption();
-            //Console.WriteLine(enc.encryption("wclwfoznbmyycxvaxagjhtexdkwjqhlojykopldsxesbbnezqmixfpujbssrbfhlgubvfhpfliimvmnny"));
-            enc.encryption("wclwfoznbmyycxvaxagjhtexdkwjqhlojykopldsxesbbnezqmixfpujbssrbfhlgubvfhpfliimvmnny");
+            BeautifulDaysAtMovies beautifulDaysAtMovies = new BeautifulDaysAtMovies();
+            beautifulDaysAtMovies.beautifulDays(13, 45, 3);
         }
     }
 }
